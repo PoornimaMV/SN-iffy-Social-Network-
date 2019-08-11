@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="[users]")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -17,23 +16,19 @@ public class User {
 
     @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="postuser_Id")
     private List<Post> posts;
 
 
     @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="expressed_by")
     private List<Reaction> reactions=new ArrayList<>();
 
     @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="user_Id")
     private List<Relation> relations=new ArrayList<>();
 
     @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="friend_id")
     private List<Request> requests=new ArrayList<>();
 
 

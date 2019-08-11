@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="[posts]")
 public class Post {
 
 
@@ -27,16 +26,14 @@ public class Post {
 
 
     @ManyToOne
-    @NotNull
-    @JoinColumn(name="postuser_id",referencedColumnName = "userId")
+    @JoinColumn(name="postuser_id")
     private User user;
 
     @JsonIgnore
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="post_id")
-    private List<Reaction> posts=new ArrayList<>();
+    private List<Reaction> posts =  new ArrayList<>();
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany
     private List<PostReactionMap> reactions = new ArrayList<>();
 
    /* @OneToMany

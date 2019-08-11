@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="[relation]")
 public class Relation {
 
     @Id
@@ -17,11 +16,7 @@ public class Relation {
     private String relationStatus;
 
     @ManyToOne
-    @NotNull
-    @JoinColumn(name="user_Id")
-
-    private User user;
-
+    private User user; // by default the join column will be created like variable name(i.e here 'user') and suffixed with '_id'. So the join column that get's created in this table is 'user_id'
 
     public Long getRelationId() {
         return relationId;

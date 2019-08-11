@@ -12,11 +12,9 @@ public class PostReactionMap {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="post-id",referencedColumnName = "postId")
     private Post post;
 
     @ManyToOne
-    @JoinColumn(name="reaction_id",referencedColumnName = "reactionId")
     private Reaction reaction;
 
     public Post getPost() {

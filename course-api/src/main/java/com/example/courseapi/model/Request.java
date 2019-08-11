@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="[requests]")
 public class Request {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -16,13 +15,11 @@ public class Request {
 
 
     @ManyToOne
-    @NotNull
-    @JoinColumn(name="friend_id",referencedColumnName = "userId")
+    @JoinColumn(name="friend_id")
     private User user;
 
     @OneToOne
-    @NotNull
-    @JoinColumn(name="userId",referencedColumnName = "userId")
+    @JoinColumn(name="userId")
     private User users;
 
 

@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="[reactions]")
 public class Reaction {
 
     @Id
@@ -20,15 +19,12 @@ public class Reaction {
 
 
     @ManyToOne
-    @NotNull
     @JoinColumn(name="expressed_by")
     private User user;
 
     @ManyToOne
-    @NotNull
     @JoinColumn(name="post_id")
     private Post post;
-
 
     public Long getReactionId() {
         return reactionId;

@@ -1,5 +1,5 @@
 package com.example.courseapi.model;
-
+// model class
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
